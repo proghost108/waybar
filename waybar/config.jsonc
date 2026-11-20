@@ -1,0 +1,148 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 8,
+    "spacing": 0,
+
+    "modules-left": [],
+    "modules-center": [
+        "clock",
+        "mpris",
+        "custom/separator",
+        "hyprland/workspaces",
+        "network",
+        "wireplumber",
+        "custom/notification"
+    ],
+    "modules-right": [],
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{id}",
+        "persistent-workspaces": {
+            "*": 6
+        }
+    },
+
+    "mpris": {
+        "format": "⏸ {dynamic}",
+        "format-paused": " <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "󰎆",
+            "spotify": "󰓇",
+            "firefox": "󰈹",
+            "chromium": ""
+        },
+        "dynamic-order": ["artist", "title"],
+        "dynamic-separator": " — ",
+        "dynamic-importance-order": ["title", "artist"],
+        "title-len": 24,
+        "artist-len": 18,
+        "max-length": 34,
+        "ellipsis": "…",
+        "tooltip-format": "{player_icon} {dynamic}\n\nLeft-click: Media controller\nRight-click: Play/Pause\nMiddle-click: Next track",
+        "on-click": "bash /home/pg108/.config/waybar/scripts/media-dropdown.sh",
+        "on-click-right": "play-pause",
+        "on-click-middle": "next"
+    },
+
+    "custom/separator": {
+        "format": "·",
+        "tooltip": false
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#abb2bf'><b>{}</b></span>",
+                "days": "<span color='#979eab'><b>{}</b></span>",
+                "weeks": "<span color='#5c6370'><b>W{}</b></span>",
+                "weekdays": "<span color='#61afef'><b>{}</b></span>",
+                "today": "<span color='#1e222a' background='#98c379'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "network": {
+        "format": "▼",
+        "format-wifi": "▼",
+        "format-ethernet": "▼",
+        "format-disconnected": "▽",
+        "tooltip-format": "󰈀 {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "󰤨  {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "󰈀  {ifname} ({ipaddr})",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+
+    "wireplumber": {
+        "format": "{volume}",
+        "format-muted": "󰝟",
+        "on-click": "pkill pavucontrol || pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5,
+        "tooltip-format": "Volume: {volume}%\n{node_name}"
+    },
+
+    "custom/notification": {
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂜",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰪓",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-alt": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-click": "/home/pg108/.config/waybar/scripts/brightness.sh max",
+        "on-click-right": "/home/pg108/.config/waybar/scripts/brightness.sh min",
+        "scroll-step": 5,
+        "tooltip-format": "Brightness: {percent}%"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t({device_battery_percentage}%)",
+        "on-click": "/home/pg108/.config/waybar/scripts/rofi-bluetooth.sh",
+        "on-click-right": "rfkill toggle bluetooth",
+        "max-length": 25
+    }
+}

@@ -1,0 +1,163 @@
+/**
+ * Rofi Bluetooth Menu Theme
+ * Matching Monochrome Topographic Aesthetic
+ **/
+
+configuration {
+    font:                       "JetBrainsMono Nerd Font Propo 11";
+    show-icons:                 false;
+    drun-display-format:        "{name}";
+    hover-select:               true;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+}
+
+* {
+    background:                  rgba(16, 18, 22, 0.95);
+    background-alt:              rgba(255, 255, 255, 0.07);
+    foreground:                  #f4f4f5;
+    foreground-muted:            #a1a1aa;
+    selected:                    rgba(255, 255, 255, 0.16);
+    active:                      #ffffff;
+    urgent:                      #f87171;
+    border-color:                rgba(255, 255, 255, 0.14);
+}
+
+window {
+    transparency:                "real";
+    location:                    north;
+    anchor:                      north;
+    fullscreen:                  false;
+    width:                       520px;
+    x-offset:                    0px;
+    y-offset:                    54px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px solid;
+    border-radius:               16px;
+    border-color:                @border-color;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     8px;
+    margin:                      0px;
+    padding:                     14px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     8px;
+    padding:                     8px 12px;
+    border:                      1px solid;
+    border-radius:               10px;
+    border-color:                @border-color;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    font:                        "JetBrainsMono Nerd Font Propo Bold 11";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      text;
+    placeholder:                 "Filter devices or actions...";
+    placeholder-color:           @foreground-muted;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               true;
+    spacing:                     4px;
+    background-color:            transparent;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     8px;
+    padding:                     8px 12px;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element normal.active {
+    background-color:            @background-alt;
+    text-color:                  @active;
+}
+
+element normal.urgent {
+    background-color:            rgba(248, 113, 113, 0.2);
+    text-color:                  @urgent;
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element alternate.active {
+    background-color:            @background-alt;
+    text-color:                  @active;
+}
+
+element alternate.urgent {
+    background-color:            rgba(248, 113, 113, 0.2);
+    text-color:                  @urgent;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  #ffffff;
+    border:                      1px solid;
+    border-color:                rgba(255, 255, 255, 0.25);
+}
+
+element selected.active {
+    background-color:            @selected;
+    text-color:                  #ffffff;
+    border:                      1px solid;
+    border-color:                rgba(255, 255, 255, 0.25);
+}
+
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  #ffffff;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}

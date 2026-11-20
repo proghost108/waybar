@@ -1,0 +1,27 @@
+/* =============================================================================
+   One Dark Theme Palette for Waybar
+   Based on Atom / Kitty One Dark color scheme
+   ============================================================================= */
+
+@define-color od-bg-bar          transparent;
+@define-color od-bg-capsule      rgba(33, 37, 43, 0.94);
+@define-color od-bg-subtle       rgba(57, 62, 72, 0.50);
+@define-color od-bg-tooltip      rgba(33, 37, 43, 0.98);
+
+@define-color od-border          rgba(151, 158, 171, 0.18);
+@define-color od-border-subtle   rgba(151, 158, 171, 0.10);
+@define-color od-border-active   rgba(152, 195, 121, 0.50);
+
+@define-color od-fg-bright       #ffffff;
+@define-color od-fg-primary      #abb2bf;
+@define-color od-fg-secondary    #979eab;
+@define-color od-fg-muted        #5c6370;
+@define-color od-fg-dark         #1e222a;
+
+@define-color od-accent-green    #98c379;
+@define-color od-accent-blue     #61afef;
+@define-color od-accent-red      #e06c75;
+@define-color od-accent-yellow   #e5c07b;
+@define-color od-accent-cyan     #56b6c2;
+@define-color od-accent-magenta  #c678dd;
+@define-color od-accent-text     #1e222a;

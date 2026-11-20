@@ -1,0 +1,226 @@
+@import 'colors/one-dark.css';
+
+/* =============================================================================
+   Global Reset & Typography
+   ============================================================================= */
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font Propo", "JetBrainsMono Nerd Font", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* =============================================================================
+   Bar Shell - Transparent Pass-Through Container
+   ============================================================================= */
+window#waybar {
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+window#waybar > box {
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* =============================================================================
+   Floating Island Capsule (Centered Single Bar)
+   ============================================================================= */
+.modules-center {
+    background-color: @od-bg-capsule;
+    border: 1px solid @od-border;
+    border-radius: 9999px;
+    padding: 3px 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* =============================================================================
+   Precision Tooltips
+   ============================================================================= */
+tooltip {
+    background-color: @od-bg-tooltip;
+    border: 1px solid @od-border;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+}
+
+tooltip label {
+    color: @od-fg-primary;
+    padding: 6px 10px;
+    font-size: 11.5px;
+    font-weight: 500;
+}
+
+/* =============================================================================
+   Clock: Clean, Bold Time
+   ============================================================================= */
+#clock {
+    color: @od-fg-bright;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 6px 0 2px;
+    letter-spacing: 0.2px;
+    transition: all 0.2s ease;
+}
+
+#clock:hover {
+    color: @od-accent-green;
+}
+
+/* =============================================================================
+   MPRIS: Dynamic Media Ticker
+   ============================================================================= */
+#mpris {
+    color: @od-fg-primary;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 6px;
+    transition: all 0.2s ease;
+}
+
+#mpris:hover {
+    color: @od-fg-bright;
+}
+
+#mpris.paused {
+    color: @od-fg-muted;
+}
+
+/* =============================================================================
+   Separator: Middle Dot Divider
+   ============================================================================= */
+#custom-separator {
+    color: @od-fg-muted;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 4px;
+}
+
+/* =============================================================================
+   Workspaces: Clean Numbers with Accent Active Pill
+   ============================================================================= */
+#workspaces {
+    background: transparent;
+    border: none;
+    padding: 0 2px;
+}
+
+#workspaces button {
+    color: @od-fg-muted;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 5px;
+    margin: 0 1px;
+    border-radius: 9999px;
+    background-color: transparent;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#workspaces button:hover {
+    color: @od-fg-bright;
+    background-color: @od-bg-subtle;
+}
+
+#workspaces button.active {
+    background-color: @od-accent-green;
+    color: @od-accent-text;
+    font-weight: 700;
+    padding: 1px 7px;
+    margin: 0 2px;
+    min-width: 14px;
+    border-radius: 9999px;
+    box-shadow: 0 0 6px rgba(152, 195, 121, 0.35);
+}
+
+#workspaces button.urgent {
+    background-color: @od-accent-red;
+    color: @od-accent-text;
+    font-weight: 700;
+    border-radius: 9999px;
+    padding: 1px 7px;
+    margin: 0 2px;
+    min-width: 14px;
+}
+
+/* =============================================================================
+   Network Glyph: Minimalist Indicator
+   ============================================================================= */
+#network {
+    color: @od-fg-primary;
+    font-size: 10px;
+    padding: 0 5px;
+    margin-left: 2px;
+    transition: all 0.2s ease;
+}
+
+#network:hover {
+    color: @od-fg-bright;
+}
+
+#network.disconnected {
+    color: @od-accent-red;
+}
+
+/* =============================================================================
+   Wireplumber: Audio Volume Accent Pill
+   ============================================================================= */
+#wireplumber {
+    background-color: @od-accent-green;
+    color: @od-accent-text;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 9999px;
+    padding: 1px 7px;
+    margin-left: 4px;
+    min-width: 18px;
+    box-shadow: 0 0 6px rgba(152, 195, 121, 0.3);
+    transition: all 0.2s ease;
+}
+
+#wireplumber:hover {
+    box-shadow: 0 0 10px rgba(152, 195, 121, 0.6);
+}
+
+#wireplumber.muted {
+    background-color: @od-bg-subtle;
+    color: @od-fg-muted;
+    box-shadow: none;
+    font-size: 12px;
+    padding: 1px 6px;
+}
+
+/* =============================================================================
+   SwayNC Notification Bell
+   ============================================================================= */
+#custom-notification {
+    color: @od-fg-muted;
+    font-size: 13px;
+    padding: 0 4px;
+    margin-left: 3px;
+    margin-right: 2px;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+#custom-notification:hover {
+    color: @od-fg-bright;
+    background-color: @od-bg-subtle;
+}
+
+#custom-notification.notification {
+    color: @od-accent-blue;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.inhibited-notification {
+    color: @od-accent-red;
+}

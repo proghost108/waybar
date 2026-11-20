@@ -1,0 +1,27 @@
+/* =============================================================================
+   Monochrome Topographic Elevation Palette
+   Designed to match: black-and-white-topographic-complexity-backiee-HD.jpg
+   ============================================================================= */
+
+@define-color bg-bar            transparent;
+@define-color bg-module         rgba(18, 20, 24, 0.82);
+@define-color bg-module-hover   rgba(28, 32, 38, 0.92);
+
+/* Contour Line Borders */
+@define-color border-contour    rgba(255, 255, 255, 0.12);
+@define-color border-hover      rgba(255, 255, 255, 0.28);
+@define-color border-active     rgba(255, 255, 255, 0.50);
+
+/* Typography & Foreground */
+@define-color fg-primary        #f4f4f5;
+@define-color fg-secondary      #d4d4d8;
+@define-color fg-muted          #71717a;
+@define-color fg-dark           #090a0d;
+
+/* Accents & States */
+@define-color accent-active     #ffffff;
+@define-color accent-silver     #e4e4e7;
+@define-color accent-glow       rgba(255, 255, 255, 0.35);
+@define-color accent-muted      #52525b;
+@define-color accent-urgent     #f87171;
+@define-color accent-warning    #fbbf24;
